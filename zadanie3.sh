@@ -5,34 +5,30 @@ read -p "Podaj liczbę " n
 array=()
 suma=0
 max=0
-min="nima"
+min=nima
 for i in `seq $n`
 do
-    temp=$RANDOM
-    echo "${temp}"
-    array+=("${temp}") 
-    let suma+=$temp
-
-    #if i=1 ; then
-    #    min="$temp"
-    #fi
+    temp=${RANDOM}
+    echo ${temp}
+    array+=(${temp}) 
+    let suma+=${temp}
 
     if ((temp > max)) ; then
-        max="$temp"
+        max=${temp}
        fi
 
-       if [ $min == "nima" ] ; then
+       if [ ${min} == nima ] ; then
            min=${array[0]}
        fi
           
            if ((min > temp)) ; then
-                min="$temp"
+                min=${temp}
            fi
        
 done
 
-echo "${array[@]}"
-echo "Suma tablicy to ${suma}"
-echo "Średnia tablicy to $((suma/n))"
-echo "Najmniejsza wartość tablicy to $min"
-echo "Największa wartość tablicy to $max"
+echo ${array[@]}
+echo Suma tablicy to ${suma}
+echo Średnia tablicy to $((suma/n))
+echo Najmniejsza wartość tablicy to ${min}
+echo Największa wartość tablicy to ${max}
